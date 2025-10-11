@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinguaViet - Bảo tồn và Phát triển Ngôn ngữ Tày</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/language.css">
+    <link rel="stylesheet" href="css/methodology.css">
+    <link rel="stylesheet" href="css/benchmark.css">
+    <link rel="stylesheet" href="css/translation.css">
+    <link rel="stylesheet" href="css/chatbot.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- TensorFlow.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="Ảnh/logo.png" alt="LinguaViet Logo" class="logo-img">
+                <span class="logo-text">LinguaViet</span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#hero" class="nav-link active">Trang chủ</a></li>
+                <li><a href="#about" class="nav-link">Dự án</a></li>
+                <li><a href="#language" class="nav-link">Ngôn ngữ Tày</a></li>
+                <li><a href="#methodology" class="nav-link">Phương pháp</a></li>
+                <li><a href="#benchmark" class="nav-link">Đánh giá</a></li>
+                <li><a href="#translation" class="nav-link">Dịch thuật</a></li>
+                <li><a href="#chatbot" class="nav-link">Trợ lý AI</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Section 1: Hero -->
+    <section id="hero" class="section hero-section">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        LinguaViet
+                    </h1>
+                    <p class="hero-subtitle">Bảo tồn và Phát triển Ngôn ngữ Dân tộc Tày</p>
+                    <p class="hero-description">
+                        Ứng dụng tiên phong sử dụng công nghệ AI để số hóa, bảo tồn và phát triển 
+                        ngôn ngữ dân tộc Tày - xây dựng cầu nối văn hóa giữa các thế hệ và dân tộc.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#translation" class="btn btn-primary">
+                            <i class="fas fa-language"></i>
+                            Dùng thử ngay
+                        </a>
+                        <a href="#about" class="btn btn-outline">
+                            <i class="fas fa-info-circle"></i>
+                            Tìm hiểu thêm
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="Ảnh/dantoctay.jpg" alt="Người dân tộc Tày">
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Section 2: About Project -->
+    <section id="about" class="section about-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Về dự án</span>
+                <h2 class="section-title">LinguaViet là gì?</h2>
+                <p class="section-description">
+                    Dự án nghiên cứu và phát triển hệ thống dịch máy thần kinh cho cặp ngôn ngữ Tày - Việt
+                </p>
+            </div>
+
+            <div class="about-content">
+                <div class="about-card">
+                    <div class="card-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Mục tiêu</h3>
+                    <p>
+                        Xây dựng hệ thống dịch máy hai chiều Tày - Việt chất lượng cao, 
+                        hỗ trợ việc bảo tồn và phát triển ngôn ngữ dân tộc Tày trong kỷ nguyên số.
+                    </p>
+                </div>
+
+                <div class="about-card">
+                    <div class="card-icon">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <h3>Công nghệ</h3>
+                    <p>
+                        Áp dụng các mô hình Transformer tiên tiến (mBERT, XLM-RoBERTa, mBART) 
+                        kết hợp kỹ thuật RAG và data augmentation để tối ưu hiệu suất dịch.
+                    </p>
+                </div>
+
+                <div class="about-card">
+                    <div class="card-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Đối tượng phục vụ</h3>
+                    <p>
+                        Người dân tộc Tày, học sinh sinh viên, nhà nghiên cứu, giáo viên 
+                        và mọi người quan tâm đến văn hóa ngôn ngữ dân tộc thiểu số.
+                    </p>
+                </div>
+            </div>
+
+            <div class="importance-section">
+                <h3 class="subsection-title">
+                    <i class="fas fa-heart"></i>
+                    Tại sao cần bảo tồn ngôn ngữ Tày?
+                </h3>
+                <div class="importance-grid">
+                    <div class="importance-item">
+                        <div class="importance-number">01</div>
+                        <h4>Di sản văn hóa phi vật thể</h4>
+                        <p>
+                            Ngôn ngữ Tày chứa đựng tri thức, lịch sử và bản sắc văn hóa 
+                            của dân tộc Tày qua hàng ngàn năm, là di sản quý báu cần được bảo vệ.
+                        </p>
+                    </div>
+
+                    <div class="importance-item">
+                        <div class="importance-number">02</div>
+                        <h4>Nguy cơ mai một</h4>
+                        <p>
+                            Thế hệ trẻ người Tày ngày càng ít sử dụng tiếng mẹ đẻ, đặc biệt 
+                            tại các khu vực đô thị. Công nghệ số hóa là giải pháp cấp thiết.
+                        </p>
+                    </div>
+
+                    <div class="importance-item">
+                        <div class="importance-number">03</div>
+                        <h4>Đa dạng văn hóa quốc gia</h4>
+                        <p>
+                            Bảo tồn ngôn ngữ Tày góp phần duy trì sự đa dạng văn hóa của 
+                            Việt Nam với 54 dân tộc anh em, làm phong phú bản sắc dân tộc.
+                        </p>
+                    </div>
+
+                    <div class="importance-item">
+                        <div class="importance-number">04</div>
+                        <h4>Phát triển bền vững</h4>
+                        <p>
+                            Ngôn ngữ là công cụ quan trọng trong giáo dục, y tế và phát triển 
+                            kinh tế-xã hội bền vững tại các vùng dân tộc thiểu số.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Language Features -->
+    <section id="language" class="section language-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Ngôn ngữ học</span>
+                <h2 class="section-title">Đặc điểm Ngôn ngữ Tày</h2>
+                <p class="section-description">
+                    Khám phá những nét độc đáo của tiếng Tày so với tiếng Việt
+                </p>
+            </div>
+
+            <div class="language-overview">
+                <div class="overview-card">
+                    <div class="overview-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="overview-content">
+                        <h4>Số người sử dụng</h4>
+                        <p class="stat-number">~1.8 triệu</p>
+                        <p class="stat-desc">Người (dân tộc đông thứ 2 VN)</p>
+                    </div>
+                </div>
+
+                <div class="overview-card">
+                    <div class="overview-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="overview-content">
+                        <h4>Khu vực phân bố</h4>
+                        <p class="stat-number">Miền Bắc</p>
+                        <p class="stat-desc">Cao Bằng, Lạng Sơn, Bắc Kạn, Thái Nguyên...</p>
+                    </div>
+                </div>
+
+                <div class="overview-card">
+                    <div class="overview-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <div class="overview-content">
+                        <h4>Ngữ hệ</h4>
+                        <p class="stat-number">Tai-Kadai</p>
+                        <p class="stat-desc">Nhóm ngôn ngữ Tày-Thái</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="comparison-section">
+                <h3 class="subsection-title">
+                    <i class="fas fa-balance-scale"></i>
+                    So sánh với Tiếng Việt
+                </h3>
+                
+                <div class="comparison-table">
+                    <div class="comparison-row header">
+                        <div class="comparison-cell">Đặc điểm</div>
+                        <div class="comparison-cell">Tiếng Tày</div>
+                        <div class="comparison-cell">Tiếng Việt</div>
+                    </div>
+
+                    <div class="comparison-row">
+                        <div class="comparison-cell">
+                            <strong>Thanh điệu</strong>
+                        </div>
+                        <div class="comparison-cell">
+                            6 thanh điệu (tương tự Việt nhưng khác cách phát âm)
+                        </div>
+                        <div class="comparison-cell">
+                            6 thanh điệu (ngang, huyền, sắc, hỏi, ngã, nặng)
+                        </div>
+                    </div>
+
+                    <div class="comparison-row">
+                        <div class="comparison-cell">
+                            <strong>Ngữ pháp</strong>
+                        </div>
+                        <div class="comparison-cell">
+                            Chủ ngữ - Động từ - Tân ngữ (SVO)
+                        </div>
+                        <div class="comparison-cell">
+                            Chủ ngữ - Động từ - Tân ngữ (SVO)
+                        </div>
+                    </div>
+
+                    <div class="comparison-row">
+                        <div class="comparison-cell">
+                            <strong>Chữ viết</strong>
+                        </div>
+                        <div class="comparison-cell">
+                            Chữ Latinh cải tiến (từ năm 1961)
+                        </div>
+                        <div class="comparison-cell">
+                            Chữ Quốc ngữ (Latinh có dấu)
+                        </div>
+                    </div>
+
+                    <div class="comparison-row">
+                        <div class="comparison-cell">
+                            <strong>Từ vựng</strong>
+                        </div>
+                        <div class="comparison-cell">
+                            Gốc Tày-Thái, có vay mượn từ Hán-Việt
+                        </div>
+                        <div class="comparison-cell">
+                            Gốc Nam Á, nhiều từ Hán-Việt (~60%)
+                        </div>
+                    </div>
+
+                    <div class="comparison-row">
+                        <div class="comparison-cell">
+                            <strong>Phụ âm cuối</strong>
+                        </div>
+                        <div class="comparison-cell">
+                            Ít phụ âm cuối hơn, chủ yếu -p, -t, -k, -m, -n, -ng
+                        </div>
+                        <div class="comparison-cell">
+                            Nhiều phụ âm cuối: -p, -t, -c/ch, -m, -n, -ng, -nh
+                        </div>
+                    </div>
+
+                    <div class="comparison-row">
+                        <div class="comparison-cell">
+                            <strong>Ví dụ</strong>
+                        </div>
+                        <div class="comparison-cell">
+                            "Kin khảu" (ăn cơm), "Đuốc ma" (tôi đến)
+                        </div>
+                        <div class="comparison-cell">
+                            "Ăn cơm", "Tôi đến"
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cultural-section">
+                <h3 class="subsection-title">
+                    <i class="fas fa-book-open"></i>
+                    Văn hóa ngôn ngữ Tày
+                </h3>
+                <div class="cultural-grid">
+                    <div class="cultural-card">
+                        <h4>Ca dao tục ngữ</h4>
+                        <p>Kho tàng ca dao, tục ngữ phong phú phản ánh triết lý sống và kinh nghiệm sản xuất</p>
+                    </div>
+                    <div class="cultural-card">
+                        <h4>Sluông Tày</h4>
+                        <p>Hát Sluông là nghệ thuật dân gian đặc sắc, gắn liền với lễ hội và đời sống tâm linh</p>
+                    </div>
+                    <div class="cultural-card">
+                        <h4>Truyện cổ</h4>
+                        <p>Nhiều truyện thần tích, truyền thuyết được lưu truyền qua ngôn ngữ Tày</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Methodology -->
+    <section id="methodology" class="section methodology-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Quy trình</span>
+                <h2 class="section-title">Phương pháp Nghiên cứu</h2>
+                <p class="section-description">
+                    Quy trình xây dựng hệ thống dịch máy Tày - Việt với công nghệ AI
+                </p>
+            </div>
+
+            <div class="methodology-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>01. Thu thập Dữ liệu</h3>
+                        <p>
+                            Tổng hợp dữ liệu song ngữ Tày-Việt từ nhiều nguồn đáng tin cậy, 
+                            bao gồm sách giáo khoa, văn bản chính thống và corpus ngôn ngữ học.
+                        </p>
+                        <div class="data-sources">
+                            <h4>
+                                <i class="fas fa-link"></i>
+                                Nguồn dữ liệu
+                            </h4>
+                            <div class="source-list">
+                                <div class="source-item">
+                                    <div class="source-header">
+                                        <i class="fas fa-book"></i>
+                                        <strong>Từ điển Tày - Việt</strong>
+                                    </div>
+                                    <p>Ban Dân tộc tỉnh Cao Bằng - Bộ sưu tập từ vựng chuẩn</p>
+                                    <a href="https://example.com/tudien-tay-viet" target="_blank" class="source-link">
+                                        https://example.com/tudien-tay-viet
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                </div>
+
+                                <div class="source-item">
+                                    <div class="source-header">
+                                        <i class="fas fa-graduation-cap"></i>
+                                        <strong>Sách giáo khoa tiếng Tày</strong>
+                                    </div>
+                                    <p>Bộ Giáo dục và Đào tạo - Giáo trình chính thống cho học sinh dân tộc</p>
+                                    <a href="https://example.com/sgk-tieng-tay" target="_blank" class="source-link">
+                                        https://example.com/sgk-tieng-tay
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                </div>
+
+                                <div class="source-item">
+                                    <div class="source-header">
+                                        <i class="fas fa-archive"></i>
+                                        <strong>Tạp chí Dân tộc Tày</strong>
+                                    </div>
+                                    <p>Ủy ban Dân tộc - Bài báo và văn bản song ngữ</p>
+                                    <a href="https://example.com/tapchi-tay" target="_blank" class="source-link">
+                                        https://example.com/tapchi-tay
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                </div>
+
+                                <div class="source-item">
+                                    <div class="source-header">
+                                        <i class="fas fa-globe"></i>
+                                        <strong>Văn bản pháp luật song ngữ</strong>
+                                    </div>
+                                    <p>Cổng thông tin điện tử tỉnh - Văn bản hành chính Tày-Việt</p>
+                                    <a href="https://example.com/vbpl-tay" target="_blank" class="source-link">
+                                        https://example.com/vbpl-tay
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                </div>
+
+                                <div class="source-item">
+                                    <div class="source-header">
+                                        <i class="fas fa-microphone"></i>
+                                        <strong>Kho ngữ liệu dân gian</strong>
+                                    </div>
+                                    <p>Viện Nghiên cứu Văn hóa - Ca dao, tục ngữ, truyện cổ Tày</p>
+                                    <a href="https://example.com/van-hoa-tay" target="_blank" class="source-link">
+                                        https://example.com/van-hoa-tay
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <i class="fas fa-broom"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>02. Tiền xử lý Dữ liệu</h3>
+                        <p>
+                            Làm sạch, chuẩn hóa và tăng cường dữ liệu để tối ưu cho quá trình huấn luyện mô hình.
+                        </p>
+                        <ul class="process-list">
+                            <li>
+                                <i class="fas fa-check"></i>
+                                Chuẩn hóa ký tự và dấu thanh tiếng Tày
+                            </li>
+                            <li>
+                                <i class="fas fa-check"></i>
+                                Loại bỏ nhiễu và dữ liệu trùng lặp
+                            </li>
+                            <li>
+                                <i class="fas fa-check"></i>
+                                Tokenization phù hợp với đặc điểm ngôn ngữ Tày
+                            </li>
+                            <li>
+                                <i class="fas fa-check"></i>
+                                Data Augmentation: back-translation, paraphrasing
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>03. Retrieval-Augmented Generation (RAG)</h3>
+                        <p>
+                            Áp dụng kỹ thuật RAG để tăng cường khả năng dịch thuật với tri thức ngữ cảnh.
+                        </p>
+                        <div class="rag-diagram">
+                            <div class="rag-step">
+                                <div class="rag-icon"><i class="fas fa-search"></i></div>
+                                <h5>Retrieval</h5>
+                                <p>Tìm kiếm câu tương tự trong corpus</p>
+                            </div>
+                            <div class="rag-arrow"><i class="fas fa-arrow-right"></i></div>
+                            <div class="rag-step">
+                                <div class="rag-icon"><i class="fas fa-project-diagram"></i></div>
+                                <h5>Augmentation</h5>
+                                <p>Bổ sung ngữ cảnh từ dữ liệu tìm được</p>
+                            </div>
+                            <div class="rag-arrow"><i class="fas fa-arrow-right"></i></div>
+                            <div class="rag-step">
+                                <div class="rag-icon"><i class="fas fa-language"></i></div>
+                                <h5>Generation</h5>
+                                <p>Sinh bản dịch chính xác hơn</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>04. Huấn luyện Mô hình</h3>
+                        <p>
+                            Fine-tuning các mô hình pre-trained đa ngôn ngữ trên dữ liệu Tày-Việt.
+                        </p>
+                        <div class="model-cards">
+                            <div class="model-card">
+                                <h5>mBERT</h5>
+                                <p>Multilingual BERT</p>
+                            </div>
+                            <div class="model-card">
+                                <h5>XLM-R</h5>
+                                <p>XLM-RoBERTa</p>
+                            </div>
+                            <div class="model-card">
+                                <h5>mBART</h5>
+                                <p>Multilingual BART</p>
+                            </div>
+                            <div class="model-card">
+                                <h5>mT5</h5>
+                                <p>Multilingual T5</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>05. Đánh giá & Tối ưu</h3>
+                        <p>
+                            Đánh giá hiệu suất mô hình bằng các metrics chuẩn và tối ưu hóa liên tục.
+                        </p>
+                        <ul class="process-list">
+                            <li>
+                                <i class="fas fa-check"></i>
+                                Đo lường BLEU, METEOR, chrF scores
+                            </li>
+                            <li>
+                                <i class="fas fa-check"></i>
+                                Đánh giá bởi chuyên gia ngôn ngữ Tày
+                            </li>
+                            <li>
+                                <i class="fas fa-check"></i>
+                                A/B testing với người dùng thực tế
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Benchmark -->
+    <section id="benchmark" class="section benchmark-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Đánh giá</span>
+                <h2 class="section-title">Kết quả Benchmark</h2>
+                <p class="section-description">
+                    So sánh hiệu suất các mô hình sau khi fine-tuning trên dữ liệu Tày-Việt
+                </p>
+            </div>
+
+            <div class="benchmark-filters">
+                <button class="filter-btn active" data-direction="all">Tất cả</button>
+                <button class="filter-btn" data-direction="tay-vi">Tày → Việt</button>
+                <button class="filter-btn" data-direction="vi-tay">Việt → Tày</button>
+            </div>
+
+            <div class="benchmark-table-container">
+                <table class="benchmark-table">
+                    <thead>
+                        <tr>
+                            <th>Model</th>
+                            <th>Hướng dịch</th>
+                            <th>Data Augmentation</th>
+                            <th>
+                                BLEU
+                                <span class="metric-info" title="Bilingual Evaluation Understudy">
+                                    <i class="fas fa-info-circle"></i>
+                                </span>
+                            </th>
+                            <th>
+                                METEOR
+                                <span class="metric-info" title="Metric for Evaluation of Translation with Explicit ORdering">
+                                    <i class="fas fa-info-circle"></i>
+                                </span>
+                            </th>
+                            <th>Ghi chú</th>
+                        </tr>
+                    </thead>
+                    <tbody id="benchmarkTableBody">
+                        <!-- Tày → Việt -->
+                        <tr data-direction="tay-vi">
+                            <td class="model-name">mBERT</td>
+                            <td><span class="direction-badge tay-vi">Tày → Việt</span></td>
+                            <td>No</td>
+                            <td class="score">45.2</td>
+                            <td class="score">5.8</td>
+                            <td>Baseline model</td>
+                        </tr>
+                        <tr data-direction="tay-vi">
+                            <td class="model-name">mBERT</td>
+                            <td><span class="direction-badge tay-vi">Tày → Việt</span></td>
+                            <td>Back-translation</td>
+                            <td class="score highlight">52.7</td>
+                            <td class="score highlight">6.3</td>
+                            <td>+16.6% BLEU improvement</td>
+                        </tr>
+                        <tr data-direction="tay-vi">
+                            <td class="model-name">XLM-RoBERTa</td>
+                            <td><span class="direction-badge tay-vi">Tày → Việt</span></td>
+                            <td>No</td>
+                            <td class="score">48.9</td>
+                            <td class="score">6.1</td>
+                            <td>Better than mBERT baseline</td>
+                        </tr>
+                        <tr data-direction="tay-vi">
+                            <td class="model-name">XLM-RoBERTa</td>
+                            <td><span class="direction-badge tay-vi">Tày → Việt</span></td>
+                            <td>Paraphrasing</td>
+                            <td class="score highlight">55.3</td>
+                            <td class="score highlight">6.7</td>
+                            <td>Best for Tày → Việt</td>
+                        </tr>
+                        <tr data-direction="tay-vi">
+                            <td class="model-name">mBART</td>
+                            <td><span class="direction-badge tay-vi">Tày → Việt</span></td>
+                            <td>No</td>
+                            <td class="score">51.4</td>
+                            <td class="score">6.4</td>
+                            <td>Good generalization</td>
+                        </tr>
+                        <tr data-direction="tay-vi">
+                            <td class="model-name">mBART</td>
+                            <td><span class="direction-badge tay-vi">Tày → Việt</span></td>
+                            <td>Mixed augmentation</td>
+                            <td class="score highlight">54.8</td>
+                            <td class="score highlight">6.6</td>
+                            <td>Stable performance</td>
+                        </tr>
+
+                        <!-- Việt → Tày -->
+                        <tr data-direction="vi-tay">
+                            <td class="model-name">mBERT</td>
+                            <td><span class="direction-badge vi-tay">Việt → Tày</span></td>
+                            <td>No</td>
+                            <td class="score">42.1</td>
+                            <td class="score">5.4</td>
+                            <td>Baseline model</td>
+                        </tr>
+                        <tr data-direction="vi-tay">
+                            <td class="model-name">mBERT</td>
+                            <td><span class="direction-badge vi-tay">Việt → Tày</span></td>
+                            <td>Back-translation</td>
+                            <td class="score highlight">49.3</td>
+                            <td class="score highlight">5.9</td>
+                            <td>+17.1% improvement</td>
+                        </tr>
+                        <tr data-direction="vi-tay">
+                            <td class="model-name">XLM-RoBERTa</td>
+                            <td><span class="direction-badge vi-tay">Việt → Tày</span></td>
+                            <td>No</td>
+                            <td class="score">46.2</td>
+                            <td class="score">5.7</td>
+                            <td>Strong baseline</td>
+                        </tr>
+                        <tr data-direction="vi-tay">
+                            <td class="model-name">XLM-RoBERTa</td>
+                            <td><span class="direction-badge vi-tay">Việt → Tày</span></td>
+                            <td>Paraphrasing</td>
+                            <td class="score highlight">53.1</td>
+                            <td class="score highlight">6.4</td>
+                            <td>Best for Việt → Tày</td>
+                        </tr>
+                        <tr data-direction="vi-tay">
+                            <td class="model-name">mBART</td>
+                            <td><span class="direction-badge vi-tay">Việt → Tày</span></td>
+                            <td>No</td>
+                            <td class="score">48.7</td>
+                            <td class="score">6.0</td>
+                            <td>Balanced performance</td>
+                        </tr>
+                        <tr data-direction="vi-tay">
+                            <td class="model-name">mBART</td>
+                            <td><span class="direction-badge vi-tay">Việt → Tày</span></td>
+                            <td>Mixed augmentation</td>
+                            <td class="score highlight">52.4</td>
+                            <td class="score highlight">6.3</td>
+                            <td>Robust to noise</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="benchmark-notes">
+                <h3>
+                    <i class="fas fa-sticky-note"></i>
+                    Ghi chú về Metrics
+                </h3>
+                <div class="notes-grid">
+                    <div class="note-card">
+                        <h4>BLEU Score</h4>
+                        <p>
+                            <strong>Bilingual Evaluation Understudy</strong> - Đo lường độ tương đồng n-gram 
+                            giữa bản dịch máy và bản dịch tham chiếu. Điểm càng cao càng tốt (0-100).
+                        </p>
+                    </div>
+                    <div class="note-card">
+                        <h4>METEOR Score</h4>
+                        <p>
+                            <strong>Metric for Evaluation of Translation with Explicit ORdering</strong> - 
+                            Xem xét cả nghĩa từ, từ đồng nghĩa và thứ tự từ. Được nhân 10 để dễ so sánh.
+                        </p>
+                    </div>
+                    <div class="note-card">
+                        <h4>Data Augmentation</h4>
+                        <p>
+                            <strong>Back-translation</strong>: Dịch ngược để tạo dữ liệu tổng hợp.<br>
+                            <strong>Paraphrasing</strong>: Diễn đạt lại câu với ý nghĩa tương đương.<br>
+                            <strong>Mixed</strong>: Kết hợp nhiều kỹ thuật.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: Translation -->
+    <section id="translation" class="section translation-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Công cụ</span>
+                <h2 class="section-title">Dịch Tày - Việt</h2>
+                <p class="section-description">
+                    Trải nghiệm công cụ dịch thuật được hỗ trợ bởi AI
+                </p>
+            </div>
+
+            <div class="translation-tool">
+                <div class="model-status" id="modelStatus">
+                    <div class="status-content">
+                        <i class="fas fa-spinner fa-spin"></i>
+                        <span>Đang tải mô hình AI...</span>
+                    </div>
+                </div>
+
+                <div class="language-selector">
+                    <button class="lang-btn active" id="langVi" data-lang="vi">
+                        Tiếng Việt
+                    </button>
+                    <button class="swap-btn" id="swapBtn" title="Đảo ngược ngôn ngữ">
+                        <i class="fas fa-exchange-alt"></i>
+                    </button>
+                    <button class="lang-btn" id="langTay" data-lang="tay">
+                        Tiếng Tày
+                    </button>
+                </div>
+
+                <div class="translation-panels">
+                    <div class="panel input-panel">
+                        <div class="panel-header">
+                            <h3 id="inputLangLabel">Tiếng Việt</h3>
+                            <div class="char-counter">
+                                <span id="charCount">0</span> / 500
+                            </div>
+                        </div>
+                        <textarea 
+                            id="inputText" 
+                            class="translation-textarea" 
+                            placeholder="Nhập văn bản cần dịch..."
+                            maxlength="500"
+                        ></textarea>
+                        <div class="panel-actions">
+                            <button class="action-btn" id="clearBtn" title="Xóa văn bản">
+                                <i class="fas fa-times"></i>
+                                Xóa
+                            </button>
+                            <button class="action-btn" id="copyInputBtn" title="Sao chép">
+                                <i class="fas fa-copy"></i>
+                                Sao chép
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="panel output-panel">
+                        <div class="panel-header">
+                            <h3 id="outputLangLabel">Tiếng Tày</h3>
+                            <div class="translation-info" id="translationInfo"></div>
+                        </div>
+                        <textarea 
+                            id="outputText" 
+                            class="translation-textarea" 
+                            placeholder="Bản dịch sẽ xuất hiện ở đây..."
+                            readonly
+                        ></textarea>
+                        <div class="panel-actions">
+                            <button class="action-btn" id="copyOutputBtn" title="Sao chép bản dịch">
+                                <i class="fas fa-copy"></i>
+                                Sao chép
+                            </button>
+                            <button class="action-btn" id="saveFlashcardBtn" title="Lưu flashcard">
+                                <i class="fas fa-bookmark"></i>
+                                Lưu flashcard
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="translate-btn" id="translateBtn">
+                    <i class="fas fa-language"></i>
+                    Dịch ngay
+                </button>
+            </div>
+
+            <!-- Flashcards Section -->
+            <div class="flashcards-container" id="flashcardsContainer">
+                <div class="flashcards-header">
+                    <h3>
+                        <i class="fas fa-bookmark"></i>
+                        Flashcards đã lưu
+                        <span class="flashcard-count" id="flashcardCount">(0)</span>
+                    </h3>
+                    <button class="btn-clear-all" id="clearAllFlashcardsBtn">
+                        <i class="fas fa-trash-alt"></i>
+                        Xóa tất cả
+                    </button>
+                </div>
+                <div class="flashcards-grid" id="flashcardsGrid">
+                    <div class="empty-flashcards">
+                        <i class="fas fa-bookmark"></i>
+                        <p>Chưa có flashcard nào được lưu</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 7: AI Chatbot -->
+    <section id="chatbot" class="section chatbot-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Trợ lý AI</span>
+                <h2 class="section-title">Trợ lý Học Tiếng Tày</h2>
+                <p class="section-description">
+                    Chat với AI để học từ vựng, ngữ pháp và văn hóa Tày
+                </p>
+            </div>
+
+            <div id="ragStatus" class="rag-status">
+                <i class="fas fa-spinner fa-spin"></i>
+                <span>Đang khởi tạo RAG Engine...</span>
+            </div>
+
+            <div class="chatbot-interface">
+                <div class="chat-window" id="chatWindow">
+                    <div class="chat-messages" id="chatMessages">
+                    </div>
+                    <div class="chat-input-area">
+                        <div class="quick-actions">
+                            <button class="quick-btn" data-message="Dạy tôi từ vựng cơ bản">
+                                <i class="fas fa-book"></i>
+                                Từ vựng cơ bản
+                            </button>
+                            <button class="quick-btn" data-message="Cách chào hỏi bằng tiếng Tày">
+                                <i class="fas fa-hand-paper"></i>
+                                Chào hỏi
+                            </button>
+                            <button class="quick-btn" data-message="Kể về văn hóa Tày">
+                                <i class="fas fa-landmark"></i>
+                                Văn hóa
+                            </button>
+                        </div>
+                        <div class="input-wrapper">
+                            <textarea 
+                                id="chatInput" 
+                                placeholder="Nhập câu hỏi của bạn..."
+                                rows="1"
+                            ></textarea>
+                            <button class="send-btn" id="sendBtn">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chatbot-features">
+                    <div class="feature-item">
+                        <i class="fas fa-brain"></i>
+                        <h4>RAG Technology</h4>
+                        <p>Tìm kiếm thông tin chính xác từ knowledge base</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-robot"></i>
+                        <h4>Gemini 2.0 Flash</h4>
+                        <p>Powered by Google's latest AI model</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-database"></i>
+                        <h4>Knowledge Base</h4>
+                        <p>40+ tài liệu về ngôn ngữ và văn hóa Tày</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="Ảnh/logo.png" alt="LinguaViet Logo">
+                        <span>LinguaViet</span>
+                    </div>
+                    <p class="footer-desc">
+                        Bảo tồn và phát triển ngôn ngữ dân tộc Tày thông qua công nghệ AI.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Liên kết</h4>
+                    <ul class="footer-links">
+                        <li><a href="#about">Về dự án</a></li>
+                        <li><a href="#methodology">Phương pháp</a></li>
+                        <li><a href="#benchmark">Đánh giá</a></li>
+                        <li><a href="#translation">Dịch thuật</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Tài nguyên</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Tài liệu</a></li>
+                        <li><a href="#">API</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Liên hệ</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:contact@linguaviet.com">ltmdnguuu@linguaviet.com</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+84123456789">+84 123 456 789</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Hồ Chí Minh, Việt Nam</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 LinguaViet. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Chính sách bảo mật</a>
+                    <a href="#">Điều khoản sử dụng</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="js/main.js"></script>
+    <script src="js/rag-engine.js"></script>
+    <script src="js/chatbot.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/hero.js"></script>
+    <script src="js/translation.js"></script>
+    <script src="js/benchmark.js"></script>
+</body>
+</html>
