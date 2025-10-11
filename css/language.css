@@ -1,0 +1,191 @@
+/* ===== LANGUAGE FEATURES SECTION ===== */
+.language-section {
+    background: var(--white);
+}
+
+.language-overview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-3xl);
+}
+
+.overview-card {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-xl);
+    background: linear-gradient(135deg, var(--gray-50) 0%, var(--white) 100%);
+    border-radius: var(--radius-xl);
+    border: 2px solid var(--gray-200);
+    transition: all var(--transition-base);
+    position: relative;
+    overflow: hidden;
+}
+
+.overview-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--primary-red), var(--primary-gold));
+    transform: scaleY(0);
+    transition: transform var(--transition-base);
+}
+
+.overview-card:hover::before {
+    transform: scaleY(1);
+}
+
+.overview-card:hover {
+    border-color: var(--primary-red);
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+}
+
+.overview-icon {
+    flex-shrink: 0;
+    width: 70px;
+    height: 70px;
+    border-radius: var(--radius-lg);
+    background: linear-gradient(135deg, var(--primary-red), var(--accent-red-light));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-md);
+}
+
+.overview-icon i {
+    font-size: 2rem;
+    color: var(--white);
+}
+
+.overview-content h4 {
+    font-size: 1rem;
+    color: var(--gray-600);
+    font-weight: 500;
+    margin-bottom: var(--spacing-xs);
+}
+
+.stat-number {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--primary-red);
+    margin-bottom: var(--spacing-xs);
+}
+
+.stat-desc {
+    font-size: 0.875rem;
+    color: var(--gray-500);
+    margin: 0;
+}
+
+/* Comparison Section */
+.comparison-section {
+    margin-top: var(--spacing-3xl);
+}
+
+.comparison-table {
+    background: var(--white);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    margin-top: var(--spacing-xl);
+}
+
+.comparison-row {
+    display: grid;
+    grid-template-columns: 200px 1fr 1fr;
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.comparison-row.header {
+    background: linear-gradient(135deg, var(--primary-red), var(--accent-red-light));
+    color: var(--white);
+    font-weight: 600;
+}
+
+.comparison-row.header .comparison-cell {
+    color: var(--white);
+}
+
+.comparison-row:last-child {
+    border-bottom: none;
+}
+
+.comparison-row:not(.header):hover {
+    background: var(--gray-50);
+}
+
+.comparison-cell {
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-right: 1px solid var(--gray-200);
+    color: var(--gray-700);
+    line-height: 1.6;
+}
+
+.comparison-cell:last-child {
+    border-right: none;
+}
+
+.comparison-cell strong {
+    color: var(--primary-dark);
+}
+
+/* Cultural Section */
+.cultural-section {
+    margin-top: var(--spacing-3xl);
+    padding: var(--spacing-2xl);
+    background: linear-gradient(135deg, #fff5f5 0%, var(--gray-50) 100%);
+    border-radius: var(--radius-xl);
+}
+
+.cultural-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
+}
+
+.cultural-card {
+    padding: var(--spacing-xl);
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    border-left: 4px solid var(--primary-gold);
+    transition: all var(--transition-base);
+}
+
+.cultural-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+    border-left-color: var(--primary-red);
+}
+
+.cultural-card h4 {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--primary-dark);
+}
+
+.cultural-card p {
+    color: var(--gray-600);
+    line-height: 1.7;
+}
+
+@media (max-width: 968px) {
+    .comparison-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .comparison-cell {
+        border-right: none;
+        border-bottom: 1px solid var(--gray-200);
+    }
+    
+    .comparison-cell:last-child {
+        border-bottom: none;
+    }
+}
