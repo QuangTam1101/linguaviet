@@ -1,0 +1,120 @@
+{
+  "documents": [
+    {
+      "id": "intro_general",
+      "category": "Giới thiệu",
+      "title": "Tổng quan về Dân tộc Tày",
+      "source_url": "https://vi.wikipedia.org/wiki/Ng%C6%B0%E1%BB%9Di_T%C3%A0y",
+      "auto_crawl": true,
+      "tags": ["dân tộc", "tổng quan", "địa lý"]
+    },
+    {
+      "id": "intro_history",
+      "category": "Giới thiệu",
+      "title": "Nguồn gốc và Lịch sử",
+      "source_url": "https://nhandan.vn/dan-toc-tay-post723931.html",
+      "auto_crawl": true,
+      "tags": ["nguồn gốc", "lịch sử", "bách việt"] 
+    },
+    {
+      "id": "culture_festivals",
+      "category": "Văn hóa",
+      "title": "Lễ hội Lồng Tồng (Xuống Đồng)",
+      "source_url": "https://vi.wikipedia.org/wiki/L%E1%BB%85_h%E1%BB%99i_L%E1%BB%93ng_t%E1%BB%93ng",
+      "auto_crawl": true,
+      "tags": ["lễ hội", "văn hóa", "tín ngưỡng", "nông nghiệp"]
+    },
+    {
+      "id": "culture_housing",
+      "category": "Văn hóa",
+      "title": "Kiến trúc Nhà",
+      "source_url": "https://nhandan.vn/dan-toc-tay-post723931.html",
+      "auto_crawl": true,
+      "tags": ["nhà ở", "kiến trúc", "nhà sàn"]
+    },
+    {
+      "id": "culture_costume",
+      "category": "Văn hóa",
+      "title": "Trang phục truyền thống",
+      "source_url": "https://nhandan.vn/dan-toc-tay-post723931.html",
+      "auto_crawl": true,
+      "tags": ["trang phục", "quần áo", "vải chàm"]
+    },
+    {
+      "id": "vocab_greeting",
+      "category": "Từ vựng",
+      "title": "Chào hỏi cơ bản",
+      "source_url": "https://www.tiengtay.com/sach-hoc-tieng-tay-nung-chao-hoi.html",
+      "content": "Các mẫu câu chào hỏi thông dụng trong tiếng Tày.",
+      "vocab_list": [
+        {
+          "tay": "Pớ ma",
+          "viet": "Xin chào",
+          "pronunciation": "/pɔ˧ maː˧/",
+          "guide": "Đọc như: 'Pớ' (giống 'pờ' môi tròn) + 'ma' (thanh bằng)"
+        },
+        {
+          "tay": "Pai lếu",
+          "viet": "Tạm biệt",
+          "pronunciation": "/paːi˧ lɤu˥˧/",
+          "guide": "Đọc như: 'Pai' + 'lếu' (xuống giọng)"
+        },
+        {
+          "tay": "Slính cồn ai?",
+          "viet": "Bạn khỏe không?",
+          "pronunciation": "/ɬiːn˧˥ kɔn˧˩ aːi˧/"
+        }
+      ]
+    },
+    {
+      "id": "vocab_numbers",
+      "category": "Từ vựng",
+      "title": "Số đếm 1-10",
+      "source_url": "https://www.tiengtay.com/ngu-phap-tieng-tay-nung-cac-loai-tu-v-v-so-tu.html",
+      "content": "Hệ thống số đếm tiếng Tày tương đồng với ngữ hệ Tai-Kadai.",
+      "vocab_list": [
+        {"tay": "Slổ án", "viet": "Số đếm", "pronunciation": "/ɬɔ˧˩ an˥˧/"},
+        {"tay": "Nâng/Đeo", "viet": "Số 1", "pronunciation": "/nuŋ˧/"},
+        {"tay": "Sloong", "viet": "Số 2", "pronunciation": "/ɬoŋ˥˧/"},
+        {"tay": "Slam", "viet": "Số 3", "pronunciation": "/saːm˧/"},
+        {"tay": "Slí", "viet": "Số 4", "pronunciation": "/siː˧/"},
+        {"tay": "Hả", "viet": "Số 5", "pronunciation": "/haː˥˧/"},
+        {"tay": "Hốc/Xốc", "viet": "Số 6", "pronunciation": "/ɬuk˧˥/"},
+        {"tay": "Chêt", "viet": "Số 7", "pronunciation": "/ket˥˧/"},
+        {"tay": "Pét", "viet": "Số 8", "pronunciation": "/pet˥˧/"},
+        {"tay": "Cẩu", "viet": "Số 9", "pronunciation": "/kaːu˥˧/"},
+        {"tay": "Slip", "viet": "Số 10", "pronunciation": "/ɬip˧˥/"}
+      ]
+    },
+    {
+      "id": "culture_cuisine",
+      "category": "Văn hóa",
+      "title": "Ẩm thực người Tày",
+      "source_url": "https://dantocphattrien.vietnamnet.vn/nhung-mon-am-thuc-dac-trung-vung-tay-bac-1721274061583.htm",
+      "auto_crawl": true,
+      "tags": ["ẩm thực", "món ăn", "đặc sản"]
+    },
+    {
+      "id": "conversation_intro",
+      "category": "Hội thoại",
+      "title": "Hội thoại làm quen",
+      "source_url": "https://vi.wikipedia.org/wiki/Ng%C6%B0%E1%BB%9Di_T%C3%A0y",
+      "content": "Ví dụ hội thoại ngắn.",
+      "examples": [
+        {
+          "tay": "Pớ ma! Kầu kếu Luống. Mừng kếu nậu?",
+          "viet": "Chào! Tôi tên Lường. Bạn tên gì?",
+          "pronunciation": "/pɔ˧ maː˧ kɤu˧˩ kɤu˥˧ luoŋ˥˧.../"
+        },
+        {
+          "tay": "Kầu kếu Nùng. Slính cồn ai?",
+          "viet": "Tôi tên Nùng. Bạn khỏe không?"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "version": "3.0",
+    "note": "Các mục có auto_crawl=true sẽ tự động lấy nội dung từ web."
+  }
+}
